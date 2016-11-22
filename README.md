@@ -6,9 +6,9 @@ In this implementation of cellular Automaton, rather than using simply two color
 
 # Sample Code
 ```python
-cellDimension = 20
-numColumn = 15
-numRow = 15
+cellDimension = 20 # in pixel
+numColumn = 15     # in number of cells
+numRow = 15        # in number of cells
 rule = 73
 activeColor = ["#000000"]
 inactiveColor = ["#FFFFFF"]
