@@ -1,5 +1,5 @@
 # Written by Sho Nihei
-
+import sys
 from PIL import Image, ImageDraw
 from random import randint
 
@@ -85,7 +85,7 @@ class CellularAutomaton:
         Save the current cellular automaton in the project directory
     '''
     def save(self, filename):
-        self.result.save(filename + ".jpg", format='JPEG', subsampling=0, quality=100)
+        self.result.save(filename, subsampling=0, quality=100)
         return True
     
     '''
@@ -150,3 +150,11 @@ class CellularAutomaton:
 
         if onOffArray == rule:
             self.setState(data[3], data[4], ruleOutcome)
+
+def main(args):
+    obj = CellularAutomaton(int(args[0]), int(args[1]), int(args[2]), int(args[3]))
+    obj.make()
+    obj.save(args[4])
+
+if __name__ == "__main__":
+    main(sys.argv[1:])
